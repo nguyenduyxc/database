@@ -1,0 +1,66 @@
+https://www.youtube.com/playlist?list=PLQi-dJ8Gqv2jOBylizX6NlHjk2o9w7p3u
+1. Mysql là gì?
+- là 1 hệ quản trị csdl phổ biến nhất, đc ưa chuộng.
++ tốc độ, ổn định, dễ dàng sd, hoạt động trên nhiều hdh
++ Thích hợp vs các ứng dụng có truy cập dữ liệu trên internet
++ Hỗ trợ nhiều nnlt, vd: php
+2, Mysql làm gì?
+- Thêm dl
+- Sửa dl
+- Xóa dl
+- truy vấn dl
+- tạo csdl, bảng ...
+3, Tầm quan trọng mysql vs website
+- website luôn làm vc vs csdl
+- mysql co tốc độ cao, dễ sử dụng, lựơng ng dùng đông đảo-> lựa chọn hàng đầu trong phát triển website.
+4, XAMPP
+a, là gì?
+- Là chương tình tạo máy chủ web.
+- Tích hợp sẵn apache, php, Mysql
+b, Ưu điểm
+- Tích hợp sẵn mysql
+- sử dụng 1 giao diện hỗ trợ mysql là phpadmin
+c, cài đặt 
+d, Khởi động XAMPP
+
+=== note ===
+- Tạo db
+CREATE DATABASE hocmysql_cli CHARACTER SET utf8 COLLATE utf8_unicode_ci
+
+- Tao table
+CREATE TABLE thanhvien (
+	id_thanhvien int (10) PRIMARY KEY,
+    tai_khoan varchar(255), 
+    mat_khau varchar(255)
+)
+
+- Them sua xoa dl
++ Them du lieu 
+INSERT INTO thanhvien(tai_khoan, mat_khau) VALUES('duy1', '123'), ('duy2', '45678');
++ lay dl
+SELECT * FROM `thanhvien`;
+SELECT * FROM `thanhvien` WHERE tai_khoan = 'duy1'; // lay theo dieu kien 
++ update dl
+update thanhvien SET tai_khoan='duy01 update' WHERE id_thanhvien=1; 
++ xoa dl 
+DELETE FROM thanhvien WHERE id_thanhvien = 1;
+
+- And & OR
+SELECT * FROM `thanhvien` WHERE tai_khoan = 'admin2' AND mat_khau='56789';
+SELECT * FROM `thanhvien` WHERE tai_khoan='duy2' OR tai_khoan='nguyen van a';
+
+- like
+SELECT * FROM `thanhvien` WHERE tai_khoan LIKE "%a%"
+
+- order by DESC: giam dan, ASC: tang dan
+SELECT * FROM `thanhvien` ORDER BY id_thanhvien DESC 
+SELECT * FROM `thanhvien` ORDER BY id_thanhvien ASC;
+
+- Limit vitri, sotin
+SELECT * FROM `thanhvien` LIMIT 1, 2;
+
+- random 
+SELECT * FROM `thanhvien` ORDER BY RAND() LIMIT 2
+
+- inner join
+SELECT tai_khoan, mat_khau, ho_ten, gioi_tinh FROM thanhvien INNER JOIN chitiet_thanhvien ON thanhvien.id_thanhvien = chitiet_thanhvien.id_thanhvien;
