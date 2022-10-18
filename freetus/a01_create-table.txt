@@ -1,0 +1,27 @@
+1, Tao table 
+- tao db
+CREATE DATABASE QLSV;
+USE QLSV;
+- tao tb
+USE QLSV;
+CREATE TABLE SINHVIEN(
+  MaSV INT(11),
+  TenSV VARCHAR(255),
+  NamSinh int(4)
+) ENGINE = InnoDB
+2, tao tb co DEFAULT
+USE QLSV;
+CREATE TABLE SINHVIEN(
+  MaSV INT(11),
+  TenSV VARCHAR(255) default 'noname',
+  NamSinh int(4)
+) ENGINE = InnoDB
+3, NOT NULL VS NULL(mac dinh)
+USE QLSV;
+CREATE TABLE SINHVIEN(
+  MaSV INT(11) NOT NULL,
+  TenSV VARCHAR(255) default 'noname',
+  NamSinh int(4)
+) ENGINE = InnoDB
+4, xoa bang 
+DROP TABLE sinhvien;

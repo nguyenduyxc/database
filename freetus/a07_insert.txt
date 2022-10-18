@@ -1,0 +1,51 @@
+1, INSERT ko khoa ngoai
+CREATE TABLE Sinhvien(
+	sv_id INT(10) NOT NULL AUTO_INCREMENT,
+  	sv_name VARCHAR(255)  NOT NULL, 	
+  	sv_desciption VARCHAR(255) NOT NULL, 
+    CONSTRAINT pk_sv  PRIMARY KEY (sv_id)
+) ENGINE = INNODB
+
+- Khai báo rõ tên column
+INSERT INTO sinhvien(sv_name, sv_desciption)
+VALUES('Nguyen Van A', 'Sinh vien ')
+
+- Ko khai bao day du column
+INSERT INTO sinhvien 
+VALUES(2, 'Nguyen Van B', 'Hoc sinh')
+
+2, INSERT co khoa ngoai
+CREATE TABLE Lop(
+	lop_id INT(10) Not Null AUTO_INCREMENT,
+  	lop_name VARCHAR(255) NOT NULL,
+  CONSTRAINT pk_lop PRIMARY KEY (lop_id)
+);
+
+CREATE TABLE Sinhvien(
+	sv_id INT(10) NOT NULL AUTO_INCREMENT,
+  	sv_name VARCHAR(50) NOT NULL,
+  	sv_description VARCHAR(255)  NOT NULL,
+  	lop_id INT(10),
+  	CONSTRAINT pk_sinhvien PRIMARY KEY(sv_id),
+  	CONSTRAINT fk_lop FOREIGN KEY (lop_id) REFERENCES Lop(Lop_id)
+);
+
+- them data vao Lop
+INSERT INTO lop(lop_name)
+VALUES('60TH1'), ('60TH2') 
+- Them data vao Sinhvien
+INSERT INTO Sinhvien (sv_name, sv_description, lop_id)
+VALUES ('Nguyen Van A', 'sinh vien gioi', 2),
+    ('Nguyen Van B', 'sinh vien xuat sac', 1)
+
+- INSERT ma co dau ngoac kep: them \ trc dau " ' " 
+INSERT INTO Sinhvien (sv_name, sv_description, lop_id)
+VALUES ('Nguyen Van A', 'sinh vien \'gioi\' ', 1)
+
+
+
+
+
+
+
+

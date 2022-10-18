@@ -1,0 +1,18 @@
+CREATE TABLE Task(
+	task_id INT (10) NOT NULL AUTO_INCREMENT,
+  	subject VARCHAR(255),		
+  	start_date DATE,
+  	end_date DATE, 
+  	description varchar(200),
+   CONSTRAINT pk_task PRIMARY KEY (task_id)
+)
+
+- doi caui truc cau 
+ALTER TABLE task CHANGE COLUMN description description VARCHAR(255) NOT NULL
+
+- Them column 
+ALTER TABLE task ADD COLUMN daylacolumnadd VARCHAR(255) NOT NULL 
+
+- Sua ten table
+ALTER TABLE task 
+RENAME Task_rename;

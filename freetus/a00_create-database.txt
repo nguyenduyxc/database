@@ -1,0 +1,8 @@
+- tao db
+CREATE DATABASE IF NOT EXISTS SINHVIEN; 
+- tao db sd character va collate
+CREATE database if not EXISTS SINHVIEN CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci';
+- su dung db 
+use hocmysql_cli;
+- Xoa db
+DROP database sinhvien;

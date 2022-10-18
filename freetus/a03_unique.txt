@@ -1,0 +1,37 @@
+1, tao UNIQUE trong CREATE table
+CREATE TABLE users (
+  id INT(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+  username varchar(70) NOT NULL UNIQUE,
+  email varchar(70) NOT NULL UNIQUE
+)
+
++ Tao unique trong ALTER TABLE 
+CREATE TABLE users (
+  id INT(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+  username varchar(70) NOT NULL ,
+  email varchar(70) NOT NULL 
+)
+ALTER TABLE users ADD UNIQUE (email);
+
++ tao theo truong fileds
+CREATE TABLE users (
+  id INT(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+  username varchar(70) NOT NULL ,
+  email varchar(70) NOT NULL,
+  UNIQUE (username),
+  UNIQUE (email)
+)
+
++ CONSTRAINT 
+ALTER TABLE users ADD CONSTRAINT pk_userunique UNIQUE (email, username)
+hoac
+CREATE TABLE users (
+  id INT(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+  username varchar(70) NOT NULL ,
+  email varchar(70) NOT NULL,
+  CONSTRAINT username_unique UNIQUE (username),
+  CONSTRAINT email_unique UNIQUE(email)
+)
+
+2, Xoa UNIQUE
+ALTER TABLE users drop index username_unique

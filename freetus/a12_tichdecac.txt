@@ -1,0 +1,4 @@
+- la tich ban ghi cua 2 bang
+- ko nen dung  
+SELECT * 
+FROM lop, sinhvien 

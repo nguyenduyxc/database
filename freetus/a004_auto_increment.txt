@@ -1,0 +1,3 @@
+- tu dong tang
+- muon tu dong tang tu 100
+    ALTER TABLE users AUTO_INCREMENT=100

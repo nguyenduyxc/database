@@ -1,0 +1,56 @@
+- Tạo khóa ngoại 
++ ngay cùng với tạo bảng(ko có tên )
+CREATE TABLE Groups(
+	group_id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title varchar(255) NOT NULL, 
+    levels tinyint(10) DEFAULT 1 NOT NULL
+);
+CREATE TABLE Users (
+	user_id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username varchar(50) NOT NULL, 
+    email varchar(50) NOT NULL,
+   	group_id int(10), 
+    foreign KEY (group_id) references Groups(group_id)
+)
++ dung constraint tao khoa ngoai co ten 
+CREATE TABLE groups (
+    group_id int(10) primary key auto_increment,
+    title varchar(255)
+);
+CREATE table users (
+  user_id int(10) primary key auto_increment,
+  username varchar(255), 
+  email varchar(255), 
+  group_id int(10),
+  constraint fk_group foreign key(group_id) references groups(group_id) 
+)
+
++ dung ALTER TABLE
+CREATE TABLE groups(
+	group_id int(10) not null primary key auto_increment,
+  title varchar(255) not null 
+);
+CREATE TABLE users(
+	user_id int(10) not null primary key auto_increment,
+  	username varchar(255) not null , 
+  	email varchar(255) not null , 
+  group_id int(10)
+)
+
+// cach 1: alter + dat ten cho khoa ngoai
+ALTER TABLE users ADD CONSTRAINT fk_group FOREIGN KEY(group_id) REFERENCES groups(group_id);
+// cach 2: alter 
+ALTER TABLE users ADD FOREIGN KEY(group_id) REFERENCES groups(group_id)
+
++ tao khoa ngoai de quy (chinh no)
+CREATE TABLE EMPLOYEE(
+	employee_id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  	name varchar(255) NOT NULL,
+  	email varchar(255) NOT NULL,
+    leader_id INT(10),
+  	CONSTRAINT fk_employee FOREIGN KEY(leader_id) REFERENCES employee(employee_id)
+)
+
+2. Xoa khoa ngoai: dieu kien la da c dc dat ten (CONSTRAINT)
+ALTER TABLE users DROP FOREIGN KEY  fk_group
+

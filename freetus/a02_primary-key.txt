@@ -1,0 +1,48 @@
+1, Tao khoa chinh
+- c1: tao sau column
+use qlsv;
+CREATE TABLE users(
+  id int(10) unsigned NOT NULL PRIMARY KEY,
+  email VARCHAR(70) NOT NULL
+) ENGINE = INNODB
+
+-c2: dat o cuoi cac fileds 
+use qlsv;
+CREATE TABLE users(
+  id int(10) unsigned NOT NULL,
+  email VARCHAR(70) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE = INNODB
+
+- chon nhiều fileds lam khoa chinh
+use qlsv;
+CREATE TABLE users(
+  id int(10) unsigned NOT NULL,
+  email VARCHAR(70) NOT NULL,
+  PRIMARY KEY (id, email)
+) ENGINE = INNODB
+-dung alter table
+use qlsv;
+CREATE TABLE users(
+  id int(10) unsigned NOT NULL,
+  email VARCHAR(70) NOT NULL
+) ENGINE = INNODB
+
+ALTER TABLE users add primary key (id)
+
+- su dung constraint dat ten cho khoa chinh
+CREATE TABLE users(
+  id int(10) unsigned NOT NULL,
+  email VARCHAR(70) NOT NULL,
+  CONSTRAINT pk_users PRIMARY KEY(id)	
+) ENGINE = INNODB;
++ dung alter
+CREATE TABLE users(
+  id int(10) unsigned NOT NULL,
+  email VARCHAR(70) NOT NULL,
+  CONSTRAINT pk_users PRIMARY KEY(id)	
+) ENGINE = INNODB;
+ALTER TABLE users ADD CONSTRAINT pk_user PRIMARY KEY(id)
+
+2, xoa khoa chinh
+ALTER TABLE users drop primary key

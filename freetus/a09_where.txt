@@ -1,0 +1,9 @@
+1, WHERE IN -> thay cho nhieu or
+SELECT sv_id, sv_name, sv_description FROM sinhvien WHERE sv_name IN ('Mr Kinh', 'Mr Quyen')
+2, WHERE like
+- %
+SELECT sv_id, sv_name, sv_description FROM sinhvien WHERE sv_name LIKE '%cuong%';
+SELECT sv_id, sv_name, sv_description FROM sinhvien WHERE sv_name LIKE 'cuong%';
+SELECT sv_id, sv_name, sv_description FROM sinhvien WHERE sv_name LIKE '%cuong';
+- _:ky tu thay the bat ky 
+SELECT sv_id, sv_name, sv_description FROM sinhvien WHERE sv_name LIKE 'M_%';

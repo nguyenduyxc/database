@@ -1,0 +1,15 @@
+- INSERT
+INSERT INTO Sinhvien (sv_name, sv_description, lop_id) 
+VALUES ('Mr Cuong', 'Nguyen Van Cuong', 1),
+	('Mr Kinh', 'Nguyen Van Kinh', 1),
+    ('Mr Chinh', 'Nguyen Van Chinh', 1),
+    ('Mr Quyen', 'Nguyen Van Quyen', 1)
+
+- cau truc
+SELECT filed1, filed2 ...
+FROM tabel_name
+WHERE   dieukien
+ORDER BY filed1 desc|asc
+LIMIT vitri, sobanghi
+
+- 
