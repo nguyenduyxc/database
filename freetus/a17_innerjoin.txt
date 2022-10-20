@@ -1,0 +1,28 @@
+- demo
++ tich de cac 
+SELECT sv_name, lop_name 
+FROM sinhvien, lop
+WHERE sinhvien.lop_id = lop.lop_id
++ inner  join
+SELECT sv_name, lop_name 
+FROM sinhvien INNER JOIN lop
+ON sinhvien.lop_id = lop.lop_id
+
+-inner join nhieu bang 
+SELECT sv_name, lop_name 
+FROM 
+sinhvien INNER JOIN lop
+ON sinhvien.lop_id = lop.lop_id
+sinhvien INNER JOIN KHOA
+ON sinhvien.khoa_id = khoa.khoa_id
+WHERE LOP.lop_name = '60TH2'
+
+- Tránh lỗi ambiguous : t dung table.feild
+SELECT sinhvien.sv_name, lop.lop_name, lop.lop_id 
+FROM sinhvien INNER JOIN lop
+ON sinhvien.lop_id = lop.lop_id
+
+- dung alias 
+SELECT sv.sv_name, l.lop_name, l.lop_id 
+FROM sinhvien sv INNER JOIN lop l
+ON sv.lop_id = l.lop_id

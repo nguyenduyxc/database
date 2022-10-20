@@ -1,0 +1,18 @@
+1, SELECT trong khoang
+- gan nhu sd WHERE ... AND 
+SELECT * 
+FROM sinhvien
+WHERE sv_id >= 3 AND sv_id<= 7;
+
+- sd BETWEEN
+SELECT * 
+FROM sinhvien
+WHERE sv_id BETWEEN 3 AND 7
+
+2, SELECT ngoai khoang
+- OR
+SELECT * FROM sinhvien WHERE sv_id < 3 OR sv_id > 7;
+- NOT BETWEEN
+SELECT * 
+FROM sinhvien
+WHERE sv_id NOT BETWEEN 3 AND 7

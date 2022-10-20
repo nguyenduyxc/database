@@ -1,0 +1,4 @@
+- lay dl nhu inner join nhung lay them dl ben trai
+SELECT sv.sv_name, sv.sv_description
+FROM sinhvien sv LEFT JOIN lop l
+ON sv.lop_id = l.lop_id

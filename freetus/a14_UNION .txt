@@ -1,6 +1,9 @@
-- Noi hia hoac nhieu cau truy van lai voi nhau => tra ve kq duy nhat
+- Noi hai hoac nhieu cau truy van lai voi nhau => tra ve kq duy nhat
 - UNION [DISTINCT | ALL] -> loai bo ket qua trung| lay het
 - luu y 
 + Số lượng colums trong tất cả các lệnh SELECT phải bằng nhau
 + Mỗi column tương ứng vị trí phải có cùng kiểu dữ liệu và độ dài 
 
+SELECT id, title FROM news_1
+UNION
+SELECT id, title FROM news_2

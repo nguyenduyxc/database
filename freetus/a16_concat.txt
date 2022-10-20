@@ -1,0 +1,15 @@
+- conxat  trong select
+SELECT CONCAT('day la con cat ', sv_name) AS dayLaConcatCuaDuy 
+FROM sinhvien
+
+- concat  trong INSERT INTO
+INSERT INTO sinhvien(sv_name, sv_description) 
+VALUES (CONCAT('duy', 'concat'), 'day description')
+
+-concat trong update
+UPDATE sinhvien SET sv_name='duyConcatUpdate' 
+WHERE sv_id=9
+
+-concat trong DELETE
+DELETE FROM sinhvien 
+WHERE sv_name=CONCAT('duyConcat', 'Update')

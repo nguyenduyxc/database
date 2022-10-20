@@ -1,0 +1,22 @@
+- sub query: truy van vong 
+- cham hon truy van binh thuong 
+vd: lay cac ban ghi co lop_id = 1
+// c1
+SELECT * 
+FROM sinhvien
+WHERE lop_id > 1
+
+// c2 
+SELECT * 
+FROM sinhvien
+WHERE lop_id IN (SELECT lop_id 
+FROM lop
+WHERE lop_id > 1)
+
+// c3
+SELECT * 
+FROM sinhvien sv INNER JOIN (SELECT lop_id 
+FROM lop
+WHERE lop_id > 1) as l
+ON sv.lop_id = l.lop_id 
+

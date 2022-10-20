@@ -1,0 +1,30 @@
+- cau truc
+SELECT
+    ...
+FROM
+    ...
+WHERE 
+    ...
+GROUP BY
+    ...
+
+- khi co group no chi tra ve 1 ban ghi theo phan cua group by 
+    -> hay dung de Count, Max, Sum ban ghi
+SELECT COUNT(sv_name) as total_record, lop_id
+FROM sinhvien
+WHERE sv_id >= 3
+GROUP BY lop_id
+
+- dung HAVING de them dk sau khi da dung group by
+thu tu lenh: select > FROM > where > GROUP by > HAVING > ORDER BY > limit 
+thu tu thuc hien: FROM > WHERE >SELECT > GROUP BY > HAVING > ORDER BY > limit
+
++ vd: Đếm tổng số sinh viên theo từng lớp, và chỉ trả về lớp nào có từ 2 sinh viên trở đi.
+SELECT COUNT(sv_id) AS total_sv, lop_id
+FROM sinhvien
+GROUP BY lop_id
+HAVING total_sv >= 2
+
+
+
+
